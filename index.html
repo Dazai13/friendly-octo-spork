@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="media.css"/>
+        <link rel="stylesheet" href="popup.css"/>
+    </head>
+    <body>
+        <main class="main-container">
+            <div class="panels">
+                <div class="first-panel">
+                    <div class="control">
+                        <div class="first-panel__control-exit">
+                            <span class="icon"></span>
+                            <p>Войти</p>
+                        </div>
+                    </div>
+                </div>
+                <navbar-elem style="width: 100%"> </navbar-elem>
+            </div>
+            <div class="content-wrapper">
+                <div class="control-panel">
+                  <div class = "control-panel__row">
+                    <div tooltip="добавить новую вакансию" class="control-panel__segment add-a-new-one">
+                        <p class="control-panel__segment-text">ДАТА ОТ <span class="green"></span></p>
+                    </div>
+                    <div tooltip="добавить новую вакансию" class="control-panel__segment date-from">
+                        <p class="control-panel__segment-text">ДАТА ДО <span class="green"></span></p>
+                    </div>
+                    <div tooltip="добавить новую вакансию" class="control-panel__segment add-a-new-one">
+                        <span style="font-weight: bold; font-size: 20px; color: gray" class="control-panel__segment-icon plus">+</span>
+                        <p class="control-panel__segment-text">ADD A NEW ONE</p>
+                    </div>            
+                    <div tooltip="ОЧИСТИТЬ ВСЕ ПОЛЯ БЫСТРОГО ПОИСКА" class="control-panel__segment deselect">
+                        <span class="icon control-panel__segment-icon"></span>
+                        <p class="control-panel__segment-text">DESELECT</p>
+                    </div>
+                    <div tooltip="количество найденных вакансий" class="control-panel__segment in-total">
+                        <span class="icon control-panel__segment-icon"></span>
+                        <p class="control-panel__segment-text">IN TOTAL: <span class="green"></span></p>
+                    </div>
+                    <div tooltip="Экспорт вакансий в xlsx" class="control-panel__segment export-button">
+                      <span class="icon control-panel__segment-icon"></span>
+                      <p class="control-panel__segment-text">EXPORT</p>
+                    </div>
+                    <div tooltip="импорт вакансий из xlsx" class="control-panel__segment import-button">
+                        <span class="icon control-panel__segment-icon"></span>
+                        <p class="control-panel__segment-text">IMPORT</p>
+                    </div>
+                  </div>
+                  <div class = "control-panel__row1">
+                    <div tooltip="удалить вакансии в бд" class="control-panel__segment delete-everything active">
+                        <p class="control-panel__segment-text active">CLEAR THE TABLE</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="content-wrapper">
+                <div class="control-select">
+                    <div class="control__select__content">
+                        <p class = "control__select__text">Статистика по новым</p>
+                        <select class = "control__select__enter">
+
+                        </select>
+                    </div>
+                    <div class="control__select__content">
+                        <p class = "control__select__text">Регион контрагента</p>
+                        <select class = "control__select__enter">
+
+                        </select>
+                    </div>
+                    <div class="control__select__content">
+                        <p class = "control__select__text">Всего новых</p>
+                        <div class = "control__select__enter">0</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section class="content vacancies">
+          <div class="content-wrapper">
+              <div class="mobile-cocntrol-wrapper__go-back">
+                  <span class="icon"></span>
+                  <p>Вакансии</p>
+              </div>
+              <pagination-control></pagination-control>
+
+              <ads-table></ads-table>
+
+              <div class="title-wrapper">
+                  <h3 class="table-title medium">Журнал вакансий</h3>
+              </div>
+
+              <h5 class="medium-screen-size__table-name">Вакансии</h5>
+
+              <div class="mobile-wrapper__input mobile-wrapper__input-vacancy-name">
+                  <span style="color: gray" class="icon"></span
+                  ><input class="mobile" type="text" name="" id="" placeholder="Название вакансии" />
+              </div>
+              <div class="mobile-wrapper__input mobile-wrapper__input-id">
+                  <span style="color: gray" class="icon"></span><input class="mobile" type="text" name="" id="" placeholder="ID" />
+              </div>
+              <div class="mobile-wrapper__input mobile-wrapper__input-source">
+                  <span style="color: gray" class="icon"></span
+                  ><input class="mobile" type="text" name="" id="" placeholder="Источник публикации" />
+              </div>
+              <div class="mobile-wrapper__input mobile-wrapper__input-date">
+                  <span style="color: gray" class="icon"></span><input class="mobile" type="text" name="" id="" placeholder="Дата" />
+              </div>
+          </div>
+          <div class="table-wrapper">
+              <div class="table vacancies">
+                  <div class="mobile-wrapper-table">
+                      <div class="table__row-item title">
+                          <p class="medium">№ | id </p>
+                      </div>
+                      <div class="table__row-item title center id-sort sort">
+                          <p class="medium table__row-title-text">ИНН <br>
+                            Название компании<br>
+                            Телефон(ы)</p>
+                      </div>
+                      <div class="table__row-item title center vacancy-name-sort sort">
+                          <p class="medium table__row-title-text">Бронь</p>
+                      </div>
+                      <div class="table__row-item title center">
+                          <p class="medium">Номер и дата расчета</p>
+                      </div>
+                      <div class="table__row-item title center">
+                          <p class="medium">Активные вакансии</p>
+                      </div>
+                      <div class="table__row-item title center">
+                          <p class="medium">Отклики</p>
+                      </div>
+                      <div class="table__row-item title center source-sort sort">
+                          <p class="medium table__row-title-text">Источник объявления</p>
+                      </div>
+                      <div class="table__row-item title center date-sort sort">
+                          <p class="medium table__row-title-text">Заве-
+                            ршен-
+                            ные</p>
+                      </div>
+
+
+                      <div class="search-wrapper">
+                          <div class="table__row-item title id search"><span class="icon"></span><input type="text" name="" id="" /></div>
+                      </div>
+                      <div class="search-wrapper">
+                          <div class="table__row-item title vacancy-name search">
+                              <span class="icon"></span><input type="text" name="" id="vacancy-name" />
+                          </div>
+                      </div>
+                      <div class="table__row-item title"></div>
+                      <div class="search-wrapper">
+                        <div class="table__row-item title id search"><span class="icon"></span><input type="text" name="" id="" /></div>
+                    </div>
+                    <div class="search-wrapper">
+                        <div class="table__row-item title vacancy-name search">
+                            <span class="icon"></span><input type="text" name="" id="vacancy-name" />
+                        </div>
+                    </div>
+                      <div class="table__row-item title"></div>
+                      <div class="search-wrapper">
+                          <div class="table__row-item title source search"><span class="icon"></span><input type="text" name="" id="" /></div>
+                      </div>
+
+                      <div class="table__row-item title"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="content-wrapper">
+              <pagination-control></pagination-control>
+          </div>
+        </section>
+        <mobile-ui></mobile-ui>
+        <script src="assets/js/eventbus.js"></script>
+        <script src="assets/js/navbar.js"></script>
+        <script src="assets/js/mobile_control.js"></script>
+        <script src="assets/js/ads_table_main.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/control_panel.js"></script>
+        <script src="assets/js/eventSetup.js"></script>
+        <script src="assets/js/navigatoin.js"></script>
+
+        <!--Popup-->
+        <script src="assets/js/popup/Popups.js"></script>
+        <script src="assets/js/popup/deleteEvrething.js"></script>
+        <script src="assets/js/popup/delete.js"></script>
+        <script src="assets/js/popup/delete__popup.js"></script>
+        <script src="assets/js/popup/import__popup.js"></script>
+        <script src="assets/js/popup/export.js"></script>
+        <script src="assets/js/popup/export__popup.js"></script>
+        <script src="assets/js/popup/addCompany.js"></script>
+        <script src="assets/js/popup/add.js"></script>
+        
+        <script src="assets/js/popup/edit.js"></script>
+
+
+    </body>
+</html>
